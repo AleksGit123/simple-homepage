@@ -1,6 +1,7 @@
 body {
   background-color: #F2F9FE;
   user-select: none;
+  position: relative;
 }
 
 button {
@@ -18,31 +19,64 @@ button {
   display: flex;
   flex-direction: column;
   width: min(100%, 2000px);
-  padding: 25px 70px;
+  padding: 15px 70px;
+  margin: 0 auto;
 }
 .main_tag header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  column-gap: 20px;
   width: 100%;
 }
-.main_tag header ul {
+.main_tag header img {
+  cursor: pointer;
+}
+.main_tag header .burger_menu {
+  display: none;
+}
+.main_tag header .hidden_menu {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 70px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  height: 100%;
+  width: 60%;
+}
+.main_tag header .hidden_menu ul {
+  flex-direction: column;
+  row-gap: 70px;
+  padding-top: 110px;
+}
+.main_tag header .hidden_menu ul li {
+  font-size: 30px;
+  text-align: center;
+}
+.main_tag header .page_navigator ul {
   display: flex;
   column-gap: 30px;
 }
-.main_tag header ul li {
+.main_tag header .page_navigator ul li {
   cursor: pointer;
   border-bottom: 3px solid transparent;
   padding-bottom: 3px;
   transition: 0.4s;
-}
-.main_tag header ul li p {
   color: #223344;
+  text-align: center;
+  padding: 0;
 }
-.main_tag header ul li:hover {
+.main_tag header .page_navigator ul li:hover {
+  color: #2A4DD0;
   border-bottom: 3px solid #2A4DD0;
 }
-.main_tag header ul li:hover p {
+.main_tag header .page_navigator .active {
+  border-bottom: 3px solid #2A4DD0;
   color: #2A4DD0;
 }
 .main_tag header button {
@@ -60,13 +94,22 @@ button {
   display: block;
   background-color: #FFFFFF;
   position: absolute;
-  right: 3px;
-  width: 30px;
-  height: 30px;
+  right: 4px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
 }
 .main_tag header button img {
   z-index: 100;
+  width: 20px;
+  height: 20px;
+}
+.main_tag .main_section .left_div .bottom_div .no_software, .main_tag .main_section .left_div .bottom_div .no_credit_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  text-wrap: nowrap;
 }
 .main_tag .main_section {
   display: flex;
@@ -75,8 +118,9 @@ button {
 .main_tag .main_section .left_div {
   display: flex;
   flex-direction: column;
-  row-gap: 35px;
-  width: 70%;
+  justify-content: center;
+  row-gap: 28px;
+  width: 90%;
 }
 .main_tag .main_section .left_div p {
   font-size: 14px;
@@ -105,11 +149,17 @@ button {
   border-radius: 8px;
   color: #FFFFFF;
   font-size: 16px;
+  transition: 0.4s;
+}
+.main_tag .main_section .left_div .get_started:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px 0px #0b2581;
 }
 .main_tag .main_section .left_div .get_live_demo {
   background-color: transparent;
   font-size: 16px;
   color: #2A4DD0;
+  transition: 0.4s;
 }
 .main_tag .main_section .left_div .get_live_demo::after {
   content: "";
@@ -117,15 +167,16 @@ button {
   width: 100%;
   border: 2px solid #2A4DD0;
 }
+.main_tag .main_section .left_div .get_live_demo:hover {
+  transform: scale(1.1);
+}
 .main_tag .main_section .left_div .bottom_div {
   display: flex;
   column-gap: 25px;
+  width: fit-content;
 }
-.main_tag .main_section .left_div .bottom_div .no_credit_card, .main_tag .main_section .left_div .bottom_div .no_software {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 5px;
+.main_tag .main_section .left_div .bottom_div .no_credit_card {
+  transition: 0.4s;
 }
 .main_tag .main_section .image_div {
   width: 100%;
@@ -135,7 +186,80 @@ button {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
+}
+
+@media (max-width: 1024px) {
+  .main_tag {
+    padding: 15px 40px;
+  }
+  .main_tag header li {
+    font-size: 14px;
+  }
+  .main_tag header button img {
+    width: 18px;
+    height: 18px;
+  }
+  .main_tag header button::before {
+    right: 3px;
+  }
+  .main_tag .main_section .left_div p {
+    font-size: 13px;
+  }
+  .main_tag .main_section .left_div h1 {
+    font-size: 45px;
+    line-height: 55px;
+  }
+  .main_tag .main_section .left_div h2 {
+    font-size: 16px;
+  }
+  .main_tag .main_section .left_div .button_div .get_started {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .main_tag .main_section .left_div .button_div .get_live_demo {
+    font-size: 14px;
+  }
+  .main_tag .main_section .image_div {
+    height: 417px;
+  }
+}
+@media (max-width: 800px) {
+  .main_tag {
+    padding: 15px 20px;
+  }
+  .main_tag .main_section {
+    flex-direction: column-reverse;
+  }
+  .main_tag .main_section .left_div h1 {
+    font-size: 40px;
+    text-wrap: nowrap;
+  }
+  .main_tag .main_section .image_div {
+    height: 300px;
+  }
+}
+@media (max-width: 640px) {
+  .main_tag header .burger_menu {
+    display: block;
+  }
+  .main_tag header .dark_mode_btn {
+    display: none;
+  }
+  .main_tag header .page_navigator ul {
+    display: none;
+  }
+  .main_tag header .hidden_menu ul {
+    display: flex;
+  }
+  .main_tag .main_section .left_div h1 {
+    font-size: 30px;
+    text-wrap: wrap;
+  }
+  .main_tag .main_section .left_div .bottom_div {
+    column-gap: 10px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
