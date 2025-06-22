@@ -27,9 +27,10 @@
         <header class="index_header">
 
             <!-- burger menu -->
-            <!-- <div class="hidden_menu">
+
+            <div class="hidden_menu hide">
                 <nav class="page_navigator">
-                    <ul class="pages_ul">
+                    <ul class="pages_ul hidden_menu_ul">
                         <li class="pages_li fonts active">
                             About us
                         </li>
@@ -45,38 +46,53 @@
                     </ul>
                 </nav>
                 <button class="dark_mode_btn">
-                    <img src="images/Moon_fill_light.svg" alt="moon svg">
-                    <img src="images/Sun_fill.svg" alt="sun svg">
+                    <div class="white_circle"></div>
+
+                    <img src="images/Moon_fill_light.svg" alt="moon svg" class="moon">
+                    <img src="images/Sun_fill.svg" alt="sun svg" class="sun">
                 </button>
-            </div> -->
+            </div>
 
 
+            <a href="index.html">
+                <img src="images/logo-light.svg" alt="site main logo" class="main_logo">
+            </a>
 
-            <img src="images/logo-light.svg" alt="site main logo">
 
+            <!-- page navigator -->
             <nav class="page_navigator">
                 <ul class="pages_ul">
                     <li class="pages_li fonts active">
-                        About us
+                        <a href="index.html">
+                            About us
+                        </a>
                     </li>
                     <li class="pages_li fonts">
-                        Product
+                        <a href="#"> Product</a>
+
                     </li>
                     <li class="pages_li fonts">
-                        Resource
+
+                        <a href="#">Resource</a>
+
                     </li>
                     <li class="pages_li fonts">
-                        Contact
+                        <a href="#">Contact</a>
+
                     </li>
                 </ul>
 
             </nav>
 
+            <!-- burger menu svg -->
             <img src="images/hamburger-button.svg" alt="burger menu" class="burger_menu">
-            
+
+            <!-- dark mode button -->
             <button class="dark_mode_btn">
-                <img src="images/Moon_fill_light.svg" alt="moon svg">
-                <img src="images/Sun_fill.svg" alt="">
+                <div class="white_circle"></div>
+
+                <img src="images/Moon_fill_light.svg" alt="moon svg" class="moon">
+                <img src="images/Sun_fill.svg" alt="sun svg" class="sun">
             </button>
         </header>
 
@@ -115,12 +131,15 @@
 
             <!-- image div -->
             <div class="image_div">
+
                 <img src="images/hero-image-simple-homepage.png" alt="hero image for Homepage">
             </div>
 
         </section>
 
     </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

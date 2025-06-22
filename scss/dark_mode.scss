@@ -1,0 +1,33 @@
+@use  "variables" as *;
+*{
+    color: $dark_mode_text;
+}
+
+body.dark_mode{
+    background-color: $dark_mode_back;
+    header ul li{
+        a{
+            color:$dark_mode_text
+        }
+        &:hover {
+            text-shadow: 0 0 10px $dark_mode_text,
+            0 0 15px $dark_mode_text;
+            border-bottom: 3px solid 
+            $dark_mode_text;
+        }
+        &.active{ 
+            border-bottom: 3px solid $dark_mode_text;
+            color: $dark_mode_text;
+        }
+    }    
+    .main_section{
+        .left_div{
+            p,h1,h2,.get_live_demo{
+                color: #FFFFFF;
+            }
+            .get_live_demo::after{
+                border-color: #FFFFFF;
+            }
+        }
+    }  
+}
